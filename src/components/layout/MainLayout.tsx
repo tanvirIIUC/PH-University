@@ -1,5 +1,6 @@
 import { Layout, Menu } from 'antd';
 import { Outlet } from 'react-router-dom';
+import { adminSidebarItems } from '../../routes/Admin.Routes';
 /* import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { createElement } from 'react'; */
 const { Header, Content, Sider } = Layout;
@@ -12,16 +13,33 @@ const MainLayout = ()=>{
           label: `nav ${index + 1}`,
         }),
       ); */
-      const items = [
+    /*   const items = [
         {
-          key:'1',
-          label:'Dashboard'
+          key:'adminDashboard',
+          label:<NavLink to='/admin/adminDashboard'>Dashboard</NavLink>,
+        
         },
         {
-          key:'2',
-          label:'Profile'
-        }
-      ]
+          key:'User Management',
+          label:'User Management',
+          children:[
+            {
+              key:'createAdmin',
+              label:<NavLink to='/admin/createAdmin'>Create Admin</NavLink>,
+            },
+            {
+              key:'createFaculty',
+              label:<NavLink to='/admin/createFaculty'>Create Faculty</NavLink>,
+            },
+            {
+              key:'createStudent',
+              label:<NavLink to='/admin/createStudent'>Create Student</NavLink>,
+            },
+          ]
+          
+        },
+       
+      ] */
     return (
         <Layout style={{height:'100vh'}}>
         <Sider
@@ -37,7 +55,7 @@ const MainLayout = ()=>{
           <div style={{color:'white', textAlign:'center',height:'60px',display:'flex', alignItems:'center',justifyContent:'center'}}>
             <h1>PH University</h1>
           </div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebarItems} />
         </Sider>
         <Layout>
           <Header style={{ padding: 0, }} />

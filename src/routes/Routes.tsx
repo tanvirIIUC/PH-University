@@ -1,8 +1,8 @@
 
 import { createBrowserRouter,} from "react-router-dom";
 import App from "../App";
-import AdminDashboard from "../pages/admin/AdminDashboard";
-import CreateStudent from "../pages/admin/CreateStudent";
+import { adminRoutes } from "./Admin.Routes";
+
 
 const router = createBrowserRouter([
   {
@@ -12,20 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <App/>,
-    children:[
-        {
-            index:true,
-            element:<AdminDashboard/>
-        },
-        {
-            path:'adminDashboard',
-            element:<AdminDashboard/>
-        },
-        {
-            path:'createStudent',
-            element:<CreateStudent/>
-        },
-    ]
+    children:adminRoutes
   },
 ]);
 
